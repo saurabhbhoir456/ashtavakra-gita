@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f3eb">
+    <meta name="description" content="A quiet, guided space to study the Ashtavakra Gita, one verse at a time.">
+    <title>Stillpoint — Study the Ashtavakra Gita</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="chapters.js" defer></script>
+    <script src="verses.js" defer></script>
+    <script src="renderings.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Stillpoint home">
+          <span class="brand-mark" aria-hidden="true">s</span>
+          <span>stillpoint<span class="brand-period">.</span></span>
+        </a>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a class="nav-link active" href="#study">Study</a>
+          <a class="nav-link" href="#chapters">Chapters</a>
+        </nav>
+        <button class="quiet-button" id="reset-progress" type="button" title="Clear saved study progress">Reset progress</button>
+      </header>
+
+      <main>
+        <section class="welcome-band" aria-labelledby="welcome-title">
+          <div class="welcome-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> A guide for the inward journey</p>
+            <h1 id="welcome-title">Find what has<br><em>always been here.</em></h1>
+            <p class="welcome-description">Explore the Ashtavakra Gita slowly, one reflection at a time. No rush, no finish line—just the practice of seeing clearly.</p>
+            <a class="primary-button" href="#study">Continue your study <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="welcome-art" aria-hidden="true">
+            <div class="sun-halo"></div>
+            <div class="art-orbit orbit-one"></div>
+            <div class="art-orbit orbit-two"></div>
+            <div class="art-orbit orbit-three"></div>
+            <span class="art-seed">अ</span>
+            <span class="art-caption">the witness<br>is already whole</span>
+          </div>
+          <div class="welcome-index" aria-hidden="true"><span>01</span><span class="index-line"></span><span>20</span></div>
+        </section>
+
+        <section class="study-layout" id="study" aria-label="Study area">
+          <aside class="study-sidebar" id="chapters">
+            <div class="sidebar-heading">
+              <div>
+                <p class="eyebrow">Your path</p>
+                <h2>Chapters</h2>
+              </div>
+              <span class="chapter-count">20</span>
+            </div>
+            <label class="search-box">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <span class="sr-only">Search chapters</span>
+              <input id="chapter-search" type="search" placeholder="Find a chapter..." autocomplete="off">
+              <kbd>/</kbd>
+            </label>
+            <div class="chapter-list" id="chapter-list" aria-label="Chapter list"></div>
+            <div class="sidebar-note">
+              <span class="note-icon" aria-hidden="true">✳</span>
+              <p>Take what resonates.<br>Return whenever you need.</p>
+            </div>
+          </aside>
+
+          <section class="lesson-panel" aria-live="polite">
+            <div class="lesson-topline">
+              <span class="lesson-label" id="lesson-label">CHAPTER 01 <span>·</span> THE INVITATION</span>
+              <span class="saved-status" id="saved-status"><span class="status-dot"></span> Progress saved</span>
+            </div>
+            <div class="lesson-content" id="lesson-content"></div>
+            <div class="lesson-footer">
+              <button class="text-button" id="previous-chapter" type="button"><span aria-hidden="true">←</span> Previous verse</button>
+              <div class="step-dots" id="step-dots" aria-label="Chapter position"></div>
+              <button class="text-button next-button" id="next-chapter" type="button">Next verse <span aria-hidden="true">→</span></button>
+            </div>
+          </section>
+        </section>
+
+        <section class="practice-strip" aria-label="Daily practice">
+          <div class="practice-icon" aria-hidden="true">✧</div>
+          <div class="practice-copy">
+            <p class="eyebrow">A small practice</p>
+            <p>After reading, pause for one quiet minute. Notice what is aware of this moment.</p>
+          </div>
+          <span class="practice-time">01 MIN</span>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>stillpoint<span class="brand-period">.</span></span>
+        <span>A quiet space for self-inquiry</span>
+        <span class="footer-source">Sanskrit text adapted from <a href="https://sa.wikisource.org/wiki/अष्टावक्रगीता" target="_blank" rel="noreferrer">Sanskrit Wikisource</a> (<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>). English translation by John Richards, from <a href="https://en.wikisource.org/wiki/Ashtavakra_Gita" target="_blank" rel="noreferrer">English Wikisource</a>; the translator's note releases it to the public domain. Spacing normalized and verse numbering aligned. Chapter themes are study aids, not canonical titles.</span>
+      </footer>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
